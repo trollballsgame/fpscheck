@@ -1,4 +1,24 @@
 window.onload = () => {
+    function gebqs (selector) {
+         return document.querySelector(selector);
+     }
+     function displaytext (text) {
+          gebqs('#display').innerText = text;
+            console.log(`displayed ${text}`)
+      }
+      function getDeviceType() {
+        const userAgent = navigator.userAgent;
+         if (/Mobi|Android/i.test(userAgent)) {
+               return "Mobile";
+        } else if (/Tablet|iPad/i.test(userAgent)) {
+              return "Tablet";
+         } else {
+                return "Desktop";
+          }
+        }   
+    console.log(`User Agent: ${navigator.userAgent}`);
+    console.log(`Device Type: ${getDeviceType()}`);
+    displaytext(`player settings: ${getDeviceType()}`);
     const gebid = (id) => document.getElementById(id)
     const gebcn = (cn) => document.getElementsByClassName(cn)
 
